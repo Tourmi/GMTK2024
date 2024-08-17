@@ -136,11 +136,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0498ea06537284ba0704aef6f3b9b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _extents: 14
-  _excludeFrontRange: 6
-  _excludeBackRange: 5
-  _excludeRightRange: 5
-  _excludeLeftRange: 6
+  _extents: 34
+  _excludeFrontRange: 9
+  _excludeBackRange: 8
+  _excludeRightRange: 24
+  _excludeLeftRange: 9
   _solidTile: {fileID: 11400000, guid: f43adb1fadf430445bdadb03b6972505, type: 2}
   _targetObject: {fileID: 6363671884351912757, guid: 0d1ba92d1e3e09248b9280cd4261d0a1, type: 3}
   _enemySpawner: {fileID: 6872254417693102266, guid: c0851f038d373e84a95647cce17bab82, type: 3}
@@ -249,7 +249,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.25, z: 0}
-  m_LocalScale: {x: 5, y: 1, z: 5}
+  m_LocalScale: {x: 7.1685, y: 1, z: 7.226}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8765698470323692520}

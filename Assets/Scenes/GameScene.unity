@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 330585545}
   - component: {fileID: 330585544}
   - component: {fileID: 330585547}
+  - component: {fileID: 330585548}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -181,7 +182,7 @@ Camera:
   far clip plane: 1000
   field of view: 60.000004
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -205,7 +206,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.27984518, y: -0.3647056, z: 0.11591566, w: 0.88047725}
+  m_LocalRotation: {x: -0.27984518, y: 0.36470565, z: -0.11591569, w: -0.8804772}
   m_LocalPosition: {x: 20, y: 20, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -256,6 +257,18 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &330585548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dedf1067060ac842b9937a316161aa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,6 +394,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1677356909385810194, guid: b4129c22e1930bb44a638b79273bf958, type: 3}
+      propertyPath: _extents
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 1677356909385810194, guid: b4129c22e1930bb44a638b79273bf958, type: 3}
+      propertyPath: _excludeBackRange
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1677356909385810194, guid: b4129c22e1930bb44a638b79273bf958, type: 3}
+      propertyPath: _excludeLeftRange
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1677356909385810194, guid: b4129c22e1930bb44a638b79273bf958, type: 3}
+      propertyPath: _excludeFrontRange
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1677356909385810194, guid: b4129c22e1930bb44a638b79273bf958, type: 3}
+      propertyPath: _excludeRightRange
+      value: 24
+      objectReference: {fileID: 0}
     - target: {fileID: 7652261545943953029, guid: b4129c22e1930bb44a638b79273bf958, type: 3}
       propertyPath: m_Name
       value: GameGrid
