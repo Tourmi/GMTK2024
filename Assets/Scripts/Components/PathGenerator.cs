@@ -26,6 +26,12 @@ public class PathGenerator : MonoBehaviour
     [SerializeField]
     private TileBase _solidTile;
 
+    [SerializeField]
+    private GameObject _targetObject;
+
+    [SerializeField]
+    private EnemySpawner _enemySpawner;
+
     private Tilemap _tilemap;
     private NavMeshSurface _meshSurface;
 
@@ -110,8 +116,8 @@ public class PathGenerator : MonoBehaviour
 
         var gridPositions = bounds.allPositionsWithin
             .Collect()
-            .Where(p => Random.Range(0f, 1f) < 0.5)
             .Where(IsInsideInclusionZone)
+            .Where(p => Random.Range(0f, 1f) < 0.25)
             .ToArray();
         var outsidePositions = bounds.allPositionsWithin
             .Collect()
@@ -119,9 +125,35 @@ public class PathGenerator : MonoBehaviour
             .ToArray();
         _tilemap.SetTiles(gridPositions, Enumerable.Repeat(_solidTile, gridPositions.Length).ToArray());
         _tilemap.SetTiles(outsidePositions, Enumerable.Repeat(_solidTile, outsidePositions.Length).ToArray());
+
+        var startingPoint = GenerateValidPoint();
+        _tilemap.SetTile(startingPoint, null);
+        var targetPositionTile = GenerateValidPoint();
+        _tilemap.SetTile(targetPositionTile, null);
+
+        var targetPosition = _tilemap.CellToLocal(targetPositionTile) + new Vector3(0.5f, 0.5f, 0.5f);
+        var target = Instantiate(_targetObject, transform);
+        target.transform.position = targetPosition;
+
+        var startPosition = _tilemap.CellToLocal(startingPoint) + new Vector3(0.5f, 0.5f, 0.5f);
+        var enemySpawner = Instantiate(_enemySpawner, transform);
+        enemySpawner.transform.position = startPosition;
+        enemySpawner.Target = target.transform;
+
         _meshSurface.BuildNavMesh();
     }
 
     private bool IsInsideInclusionZone(Vector3Int p)
         => (p.x + p.y) > -(_excludeLeftRange * 2) && (p.x + p.y) < (_excludeRightRange * 2) && (p.x - p.y) > -(_excludeBackRange * 2) && (p.x - p.y) < (_excludeFrontRange * 2);
+
+    private Vector3Int GenerateValidPoint()
+    {
+        Vector3Int p;
+        do
+        {
+            p = new Vector3Int(Random.Range(-_extents, _extents + 1), Random.Range(-_extents, _extents + 1), 0);
+        } while (!IsInsideInclusionZone(p));
+
+        return p;
+    }
 }

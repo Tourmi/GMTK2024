@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1677356909385810194}
   - component: {fileID: 3801922996043508954}
   m_Layer: 0
-  m_Name: Tilemap
+  m_Name: MapGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -137,11 +137,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _extents: 14
-  _excludeFrontRange: 8
-  _excludeBackRange: 7
-  _excludeRightRange: 7
-  _excludeLeftRange: 7
+  _excludeFrontRange: 6
+  _excludeBackRange: 5
+  _excludeRightRange: 5
+  _excludeLeftRange: 6
   _solidTile: {fileID: 11400000, guid: f43adb1fadf430445bdadb03b6972505, type: 2}
+  _targetObject: {fileID: 6363671884351912757, guid: 0d1ba92d1e3e09248b9280cd4261d0a1, type: 3}
+  _enemySpawner: {fileID: 6872254417693102266, guid: c0851f038d373e84a95647cce17bab82, type: 3}
 --- !u!114 &3801922996043508954
 MonoBehaviour:
   m_ObjectHideFlags: 0
