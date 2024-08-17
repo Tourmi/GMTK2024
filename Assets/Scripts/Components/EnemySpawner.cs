@@ -3,7 +3,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField]
-    private GoToPoint _enemy;
+    private GoToPointComponent _enemy;
 
     [SerializeField]
     public Transform Target;
