@@ -29,7 +29,7 @@ public class BoltSpellComponent : BaseSpellComponent
     private void Bolt_OnProjectileExpired(BoltComponent obj)
     {
         RaiseOnProjectileDestroyed(obj);
-        Destroy(obj);
+        Destroy(obj.gameObject);
     }
 
     private void Bolt_OnUpdate(BoltComponent obj)

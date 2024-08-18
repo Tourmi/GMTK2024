@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 [RequireComponent(typeof(Collider))]
 public class TowerComponent : MonoBehaviour
@@ -10,6 +11,8 @@ public class TowerComponent : MonoBehaviour
     private Collider _towerRange;
     private float _currCooldown;
     private List<GameObject> _enemiesInRange = new();
+    private Vector3 targetShot;
+    private Vector3 _targetEnemy;
 
     // Start is called before the first frame update
     void Start()
@@ -28,14 +31,30 @@ public class TowerComponent : MonoBehaviour
         var target = GetNearestEnemy();
         if (target != null)
         {
-            Spell.ActivateTowards(target.transform.position);
+            var enemyComponent = target.GetComponent<NavMeshAgent>();
+            var bulletSpeed = Spell.EffectiveSpellAttributes.GetAttributeValue(AttributeTypes.Speed);
+            _targetEnemy = target.transform.position;
+            var horizontalPos = transform.position.WithY(target.transform.position.y);
+            targetShot = (enemyComponent.velocity / bulletSpeed * Vector3.Distance(horizontalPos, _targetEnemy)) + _targetEnemy;
+            Spell.ActivateTowards(targetShot);
             _currCooldown = Spell.EffectiveSpellAttributes.GetAttributeValue(AttributeTypes.Firerate);
         }
     }
 
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawRay(transform.position, targetShot - transform.position);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawRay(transform.position, _targetEnemy - transform.position);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        _enemiesInRange.Add(other.gameObject);
+        if (other.CompareTag("Enemy"))
+        {
+            _enemiesInRange.Add(other.gameObject);
+        }
     }
 
     private void OnTriggerExit(Collider other)
