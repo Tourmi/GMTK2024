@@ -76,9 +76,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2792740733548764395}
   - {fileID: 2094475498989203429}
+  - {fileID: 920891684952899947}
   - {fileID: 2210837529304456423}
+  - {fileID: 244009525896120856}
   m_Father: {fileID: 796153654671918546}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1839735485 &8273719180649980647
@@ -204,7 +205,69 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
---- !u!1001 &221136511723199284
+--- !u!1001 &486406549800315043
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6952450432571365575}
+    m_Modifications:
+    - target: {fileID: 406156781721281211, guid: fa92f9d75fb958147a868aefbb2b7a81, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 406156781721281211, guid: fa92f9d75fb958147a868aefbb2b7a81, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 406156781721281211, guid: fa92f9d75fb958147a868aefbb2b7a81, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 406156781721281211, guid: fa92f9d75fb958147a868aefbb2b7a81, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 406156781721281211, guid: fa92f9d75fb958147a868aefbb2b7a81, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 406156781721281211, guid: fa92f9d75fb958147a868aefbb2b7a81, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 406156781721281211, guid: fa92f9d75fb958147a868aefbb2b7a81, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 406156781721281211, guid: fa92f9d75fb958147a868aefbb2b7a81, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 406156781721281211, guid: fa92f9d75fb958147a868aefbb2b7a81, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 406156781721281211, guid: fa92f9d75fb958147a868aefbb2b7a81, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557244830569150274, guid: fa92f9d75fb958147a868aefbb2b7a81, type: 3}
+      propertyPath: m_Name
+      value: FloorTile
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fa92f9d75fb958147a868aefbb2b7a81, type: 3}
+--- !u!4 &244009525896120856 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 406156781721281211, guid: fa92f9d75fb958147a868aefbb2b7a81, type: 3}
+  m_PrefabInstance: {fileID: 486406549800315043}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2961053539233416884
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -269,10 +332,10 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ed1ab15487f2f64e94a7ff7bc468bce, type: 3}
---- !u!4 &2792740733548764395 stripped
+--- !u!4 &920891684952899947 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2724797186743289823, guid: 3ed1ab15487f2f64e94a7ff7bc468bce, type: 3}
-  m_PrefabInstance: {fileID: 221136511723199284}
+  m_PrefabInstance: {fileID: 2961053539233416884}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4089689318465202234
 PrefabInstance:
@@ -414,7 +477,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2724797186743289823, guid: ff1cc69cad23b1c4dbf31760de830f4e, type: 3}
   m_PrefabInstance: {fileID: 4286887664299940664}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5645229420601890711
+--- !u!114 &1847865980336619604
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

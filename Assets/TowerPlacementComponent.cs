@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class TowerPlacementComponent : MonoBehaviour
@@ -20,7 +21,7 @@ public class TowerPlacementComponent : MonoBehaviour
     {
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         var hits = Physics.RaycastAll(ray, 100f, LayerMask.GetMask("UI"));
-        foreach (var hit in hits)
+        foreach (var hit in hits.Reverse())
         {
             if (!hit.collider.gameObject.TryGetComponent<TowerAnchorComponent>(out var anchor))
             {
@@ -29,7 +30,7 @@ public class TowerPlacementComponent : MonoBehaviour
 
             if (anchor._occupiedObject != null)
             {
-                break;
+                continue;
             }
 
             if (Input.GetMouseButtonDown(0))

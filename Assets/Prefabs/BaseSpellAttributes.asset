@@ -29,7 +29,7 @@ MonoBehaviour:
     IncrementValue: 0
     MultiplierValue: 1
   - Type: 6
-    IncrementValue: 10
+    IncrementValue: 20
     MultiplierValue: 1
   - Type: 7
     IncrementValue: 0
